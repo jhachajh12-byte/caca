@@ -1,0 +1,24 @@
+#Program cek sisa kuota RAMA
+#Total kuota per minggu =1000MB(1GB)
+TOTAL_KUOTA=1000 # MB
+UNTUK_BESOK=500 # MB minimal untuk besok
+
+print('CEK SISA KUOTA RAMA')
+print(f'Total kuota per minggu: {TOTAL_KUOTA} MB')
+
+#input
+sisa_kuota=int(input('masukkan sisa pemakaian kuota(MB): '))
+pemakaian_hari_ini=int(input('masukkan pemakaian kuota di hari ini (MB): '))
+
+#proses
+sisa_kuota_setelah_dipakai=sisa_kuota-pemakaian_hari_ini
+if sisa_kuota_setelah_dipakai <0:
+   sisa_kuota_setelah_dipakai =0 
+   
+#output
+print('sisa kuota setelah di pakai: {sisa_kuota_setelah_dipakai} MB')
+
+if sisa_kuota_setelah_dipakai>= UNTUK_BESOK:
+    print ('masih cukup untuk besok')
+else:
+    print('tidak cukup, harus libur internetan dulu nih!')
